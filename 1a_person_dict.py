@@ -7,6 +7,7 @@ person["children"] = ["Ralph", "Betty", "Joey"]
 person["pets"] = {"dog": "Fido", "cat": "Sox"}
 
 print(person)
+"""
 
 print(type(person["children"]))
 
@@ -27,3 +28,4 @@ for child in person["children"]:
 # use a for loop to print out the type of pet and name of pet
 for pet in person["pets"]:
     print(person["pets"][pet])
+"""

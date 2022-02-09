@@ -5,6 +5,9 @@ sampleDict = {
     "class": {"student": {"name": "Mike", "marks": {"physics": 70, "history": 80}}}
 }
 
+history = sampleDict["class"]["student"]["marks"]["history"]
+print(history)
+
 
 # 2) Add 2 inches to the son's height.
 
@@ -14,6 +17,8 @@ dict = {
     "son's height": 32,
     "son's weight": 25,
 }
+dict["son's height"] += 2
+print(dict)
 
 
 # 3) Given a Python dictionary, Change Brad’s salary to 8500
@@ -23,7 +28,8 @@ sampleDict = {
     "emp2": {"name": "Emma", "salary": 8000},
     "emp3": {"name": "Brad", "salary": 6500},
 }
-
+sampleDict["emp3"]["salary"] = 8500
+print(sampleDict)
 
 # 4 )Given the dictionary below, add a new key - 'work' with the values shown below:
 #       "work": ["Apology", "Phaedo", "Republic", "Symposium"]
@@ -35,3 +41,6 @@ dict = {
     "teacher": "Socrates",
     "student": "Aristotle",
 }
+print(dict)
+dict["work"] = ["Apology", "Phaedo", "Republic", "Symposium"]
+print(dict)
