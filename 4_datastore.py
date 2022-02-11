@@ -14,11 +14,8 @@ room-number,use,sq-ft,price
 104,office,150,100
 
 '''
-
-
-
-
-datastore = { "medical":[
+def main(): 
+  datastore = { "medical":[
       { "room-number": 100,
         "use": "reception",
         "sq-ft": 50,
@@ -47,3 +44,19 @@ datastore = { "medical":[
 
       ]
 }
+
+  outfile=open('retail_space.csv','w')
+  outfile.write('room-number,use,sq-ft,price')
+
+
+  for i in range(len(datastore['medical'])): 
+    Room=(datastore['medical'][i]['room-number'])
+    Use=datastore['medical'][i]['use']
+    Square_feet=datastore['medical'][i]['sq-ft']
+    Price=datastore['medical'][i]['price']
+    outfile.write('\n'+str(Room)+','+str(Use)+','+str(Square_feet)+','+str(Price))
+
+  outfile.close()
+
+main()
+
