@@ -10,7 +10,7 @@
 #  and each key’s associated value is the name of the team that won that year.The program should prompt the user for a year in the range of 1903 through 2009. 
 # It should then display the name of the team that won the World Series that year, and the number of times that team has won the World Series.
 
-def create_worldSeries_dict(): 
+def main(): 
 
     outfile=open('WorldSeriesWinners.txt','r')
 
@@ -23,42 +23,35 @@ def create_worldSeries_dict():
 
     for i in range(len(winners)):
        worldSeries[winners[i]]+=1
-    
-
-    outfile.close()
 
 
+    #print(worldSeries)
 
-
-
-def years_dict(): 
-    outfile=open('WorldSeriesWinners.txt','r')
-
-    worldSeriesWinners=outfile.read().split('\n')
 
     years_won={}
     year=1903
 
-    #print(worldSeriesWinners)
-
-    for i in range(len(worldSeriesWinners)):
+    for i in range(len(winners)):
         if year!=1904 and year!=1994: 
-            years_won[year]=worldSeriesWinners[i]
+            years_won[year]=winners[i]
+
         if year==1903 or year==1993:
             year+=2
         else:
             year+=1
 
-    print(years_won)
+    #print(years_won)
 
-    outfile.close()
+# The program should prompt the user for a year in the range of 1903 through 2009. 
+# It should then display the name of the team that won the World Series that year, and the number of times that team has won the World Series.
 
-
-def main(): 
-    create_worldSeries_dict()
-    years_dict()
-
-
+    response=float(input("Enter a year from 1903-2009 "))
+    if response==1904 or response==1994:
+        print('The world series was not played that year')
+    else:
+        print('The '+years_won[response]+' won the world series that year and they have won the world series '+str(worldSeries[years_won[response]])+' time')
+        
+    outfile.close()    
 main()
 
 
