@@ -19,13 +19,11 @@ def create_worldSeries_dict():
     worldSeries={}
 
     for i in range(len(winners)):
-       worldSeries[winners[i]]=0
+        worldSeries[winners[i]]=0
 
     for i in range(len(winners)):
        worldSeries[winners[i]]+=1
     
-
-  #  print(winners)
 
     outfile.close()
 
@@ -39,19 +37,18 @@ def years_dict():
     worldSeriesWinners=outfile.read().split('\n')
 
     years_won={}
+    year=1903
 
-
-
-    for i in range(1903,2010):
-        years_won[i]=i
+    #print(worldSeriesWinners)
 
     for i in range(len(worldSeriesWinners)):
-       years_won=years_won[worldSeriesWinners[i]] 
+        if year!=1904 and year!=1994: 
+            years_won[year]=worldSeriesWinners[i]
+        if year==1903 or year==1993:
+            year+=2
+        else:
+            year+=1
 
-
-
-      
-    
     print(years_won)
 
     outfile.close()
