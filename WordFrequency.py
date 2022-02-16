@@ -5,27 +5,22 @@
 
 
 def main(): 
-    outfile=open('AI.txt','r')
+   outfile=open('AI.txt','r')
 
-    file_contents=outfile.read().split()
+   file_contents=outfile.read().split()
 
-    word_list={}
-
-    print(len(file_contents))
-
-    for i in range(len(file_contents)):
-       word_list[file_contents[i]]=0
-
-    for i in range(len(file_contents)):
-       word_list[file_contents[i]]+=1
-    
-
-    print(word_list)
+   word_list={}
 
 
-    outfile.close()
+   for i in range(len(file_contents)):
+     word_list[file_contents[i]]=0
+
+   for i in range(len(file_contents)):
+     word_list[file_contents[i]]+=1
+
+   print(word_list)
+
+   outfile.close()
+
 
 main()
-
-
-
