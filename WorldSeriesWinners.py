@@ -45,9 +45,11 @@ def main():
 # The program should prompt the user for a year in the range of 1903 through 2009. 
 # It should then display the name of the team that won the World Series that year, and the number of times that team has won the World Series.
 
-    response=float(input("Enter a year from 1903-2009 "))
-    if response==1904 or response==1994:
-        print('The world series was not played that year')
+    response=float(input("Enter a year from 1903-2008 "))
+    if response<1903 or response>2008:
+        print('The year you selected is not in the range!')
+    elif response==1904 or response==1994:
+         print('The world series was not played that year')
     else:
         print('The '+years_won[response]+' won the world series that year and they have won the world series '+str(worldSeries[years_won[response]])+' time')
         
